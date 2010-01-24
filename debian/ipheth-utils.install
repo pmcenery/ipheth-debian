@@ -1,0 +1,2 @@
+ipheth-pair/90-iphone-tether.rules	lib/udev/rules.d
+ipheth-pair/ipheth-pair			lib/udev

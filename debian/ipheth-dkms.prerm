@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+NAME=ipheth
+PACKAGE_NAME=$NAME-dkms
+PKGVER=`dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F "-" '{print $1}'`
+PKGVER=${PKGVER#*:}
+
+case "$1" in
+    remove|upgrade)
+		udevadm control --reload-rules
+		echo "Removing all DKMS Modules"
+		dkms remove -m $NAME -v $PKGVER --all > /dev/null
+		echo "Done."
+        ;;
+esac
+
+

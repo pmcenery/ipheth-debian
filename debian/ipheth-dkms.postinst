@@ -1,0 +1,42 @@
+#!/bin/sh
+set -e
+
+NAME=ipheth
+PACKAGE_NAME=$NAME-dkms
+CVERSION=`dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F "-" '{print $1}' | cut -d\: -f2`
+
+ARCH=`dpkg --print-architecture`
+case $ARCH in
+        amd64)
+                ARCH="x86_64"
+                ;;
+        lpia)
+                ARCH="i686"
+                ;;
+        i386)
+                ARCH="i686"
+                ;;
+        *)
+                echo "WARNING: unsupported arch: $ARCH"
+                ARCH="$ARCH"
+                ;;
+esac
+
+case "$1" in
+        configure)
+		udevadm control --reload-rules
+		/usr/lib/dkms/common.postinst $NAME $CVERSION
+		exit $?
+        ;;
+
+        abort-upgrade|abort-remove|abort-deconfigure)
+        ;;
+
+        *)
+                echo "postinst called with unknown argument \`$1'" >&2
+                exit 1
+        ;;
+esac
+
+#DEBHELPER#
+
