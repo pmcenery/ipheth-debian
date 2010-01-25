@@ -5,7 +5,7 @@
  	    rv = iphone_device_new(&device, devices[i]);
  	    if (rv == 0) {
 -		rv = lockdownd_client_new(device, &client);
-+		rv = lockdownd_client_new(device, &client, "ipheth-pair");
++		rv = lockdownd_client_new_with_handshake(device, &client, "ipheth-pair");
  		if (rv == 0) {
  		    rv = lockdownd_get_device_name(client, &device_name);
  		    lockdownd_client_free(client);
@@ -14,7 +14,7 @@
  	return -1;
      }
 -    rv = lockdownd_client_new(device, &client);
-+    rv = lockdownd_client_new(device, &client, "ipheth-pair");
++    rv = lockdownd_client_new_with_handshake(device, &client, "ipheth-pair");
      if (rv) {
  	fprintf(stderr, "%s: cannot get lockdown\n", argv[0]);
  	iphone_device_free(device);
