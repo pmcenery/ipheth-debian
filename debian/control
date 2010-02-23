@@ -10,7 +10,8 @@ Homepage: http://giagio.com/wiki/moin.cgi/iPhoneEthernetDriver
 
 Package: ipheth-utils
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ipheth-dkms
+Depends: ${shlibs:Depends}, ${misc:Depends}, ipheth-dkms (= ${source:Version})
+Provides: ipheth
 Description: pairing utility for the iPhone tethering Linux kernel driver
  Provides a Linux kernel driver that adds support for iPhone tethering through
  USB cables. Unlike other solutions out there, you don't need to jailbreak your
@@ -21,13 +22,7 @@ Description: pairing utility for the iPhone tethering Linux kernel driver
 
 Package: ipheth-dkms
 Architecture: all
-Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         make,
-         dkms,
-         linux-libc-dev,
-         libc6-dev,
-         linux-headers-2.6 | linux-headers
+Depends: ${shlibs:Depends}, ${misc:Depends}, dkms
 Description: Linux kernel driver that adds support for iPhone tethering
  Provides a Linux kernel driver that adds support for iPhone tethering through
  USB cables. Unlike other solutions out there, you don't need to jailbreak your
