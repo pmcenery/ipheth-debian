@@ -1,14 +1,12 @@
-ipeth for Debian
-----------------
+ipeth-dkms for Debian
+---------------------
 
 The Debian version of ipheth provides two binary packages:
 
 ipheth-utils - pairing utility for the iPhone tethering Linux kernel driver
 ipheth-dkms - Linux kernel driver that adds support for iPhone tethering
 
-The ipheth-utils package provides the pairing utility and associated udev
-rules. The ipheth-dkms package provides the kernel source (ipheth-driver)
-for automatically building and installing the module for the running kernel
-using dkms.
+This package provides the source code for the ipheth Linux kernel driver. The
+module is automatically built and installed by DKMS for the running kernel.
 
  -- Paul McEnery <pmcenery@gmail.com>  Sun, 07 Feb 2010 21:13:09 +0000

@@ -23,7 +23,3 @@ override_dh_auto_install:
 	install -m 0644 debian/dkms.conf \
 	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
 
-# Symlink ipheth-dkms docdir to ipheth-utils
-override_dh_installdocs:
-	dh_installdocs -pipheth-dkms
-	dh_installdocs -pipheth-utils --link-doc=ipheth-dkms
