@@ -27,7 +27,7 @@ Depends: ${shlibs:Depends},
          dkms,
          linux-libc-dev,
          libc6-dev,
-         linux-headers-generic | linux-headers
+         linux-headers-2.6 | linux-headers
 Description: Linux kernel driver that adds support for iPhone tethering
  Provides a Linux kernel driver that adds support for iPhone tethering through
  USB cables. Unlike other solutions out there, you don't need to jailbreak your

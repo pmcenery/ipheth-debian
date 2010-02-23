@@ -25,5 +25,5 @@ override_dh_auto_install:
 
 # Symlink ipheth-dkms docdir to ipheth-utils
 override_dh_installdocs:
-	dh_installdocs -pipheth-utils
-	dh_installdocs -pipheth-dkms --link-doc=ipheth-utils
+	dh_installdocs -pipheth-dkms
+	dh_installdocs -pipheth-utils --link-doc=ipheth-dkms
