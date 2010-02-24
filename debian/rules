@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 # -*- mode: makefile; coding: utf-8 -*-
-# Copyright © 2009 Paul McEnery <pmcenery@gmail.com>
+# Copyright © 2010 Paul McEnery <pmcenery@gmail.com>
 
 VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-[^-]*$$/\1/p')
 
@@ -23,3 +23,7 @@ override_dh_auto_install:
 	install -m 0644 debian/dkms.conf \
 	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
 
+# Symlink ipheth-utils docdir to ipheth-dkms
+override_dh_installdocs:
+	dh_installdocs -pipheth-dkms
+	dh_installdocs -pipheth-utils --link-doc=ipheth-dkms
