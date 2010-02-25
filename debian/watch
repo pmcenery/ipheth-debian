@@ -1,3 +1,2 @@
-# Currently unused as this package has not been released yet.
-# Git-only checkouts are the only way of downloading at the moment.
 version=3
+http://githubredir.debian.net/github/dgiagio/ipheth /([\d\.].*).tar.gz
