@@ -3,13 +3,13 @@ set -e
 
 NAME=ipheth
 PACKAGE_NAME=$NAME-dkms
-PKGVER=`dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F "-" '{print $1}'`
-PKGVER=${PKGVER#*:}
+DEBVERS=$(dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F- '{print $1}')
+VERSION=$(echo $DEBVERS |sed -e 's/[+-].*//' -e 's/~//g')
 
 case "$1" in
     remove|upgrade)
 		echo "Removing all DKMS Modules"
-		dkms remove -m $NAME -v $PKGVER --all > /dev/null
+		dkms remove -m $NAME -v $VERSION --all > /dev/null
 		echo "Done."
         ;;
 esac

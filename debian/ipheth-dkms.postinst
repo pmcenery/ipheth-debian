@@ -3,9 +3,10 @@ set -e
 
 NAME=ipheth
 PACKAGE_NAME=$NAME-dkms
-CVERSION=`dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F "-" '{print $1}' | cut -d\: -f2`
+DEBVERS=$(dpkg-query -W -f='${Version}' $PACKAGE_NAME | awk -F- '{print $1}')
+VERSION=$(echo $DEBVERS |sed -e 's/[+-].*//' -e 's/~//g')
 
-ARCH=`dpkg --print-architecture`
+ARCH=$(dpkg --print-architecture)
 case $ARCH in
         amd64)
                 ARCH="x86_64"
@@ -24,7 +25,7 @@ esac
 
 case "$1" in
         configure)
-		/usr/lib/dkms/common.postinst $NAME $CVERSION
+		/usr/lib/dkms/common.postinst $NAME $VERSION
 		exit $?
         ;;
 

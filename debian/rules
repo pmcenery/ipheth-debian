@@ -2,7 +2,10 @@
 # -*- mode: makefile; coding: utf-8 -*-
 # Copyright © 2010 Paul McEnery <pmcenery@gmail.com>
 
-VERSION := $(shell dpkg-parsechangelog | sed -n 's/^Version: \(.*\)-[^-]*$$/\1/p')
+# Variables
+DEBVERS  := $(shell dpkg-parsechangelog | grep ^Version: | cut -d' ' -f2 \
+		| cut -d- -f1)
+VERSION  := $(shell echo '$(DEBVERS)' | sed -e 's/[+-].*//' -e 's/~//g')
 
 %:
 	dh $@
@@ -20,8 +23,8 @@ override_dh_auto_install:
 	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
 	install -m 0644 ipheth-driver/README \
 	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
-	install -m 0644 debian/dkms.conf \
-	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
+	sed -e 's/#VERSION#/$(VERSION)/' $(CURDIR)/debian/dkms.conf.in \
+          > $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)/dkms.conf
 
 # Symlink ipheth-utils docdir to ipheth-dkms
 override_dh_installdocs:
