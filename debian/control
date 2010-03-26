@@ -11,21 +11,23 @@ Homepage: http://giagio.com/wiki/moin.cgi/iPhoneEthernetDriver
 Package: ipheth-dkms
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, dkms
-Description: Linux kernel driver that adds support for iPhone tethering
- Provides a Linux kernel driver that adds support for iPhone tethering through
- USB cables. Unlike other solutions out there, you don't need to jailbreak your
- phone or install third-party proxy applications.
+Description: USB tethering driver for the iPhone [DKMS driver source]
+ Internet tethering driver for the iPhone which allows Linux systems to
+ make use of the phone's internet connection using a USB cable. Unlike
+ other solutions out there, you don't need to jailbreak your phone or
+ install third-party proxy applications.
  .
- This package provides the ipheth kernel module source which dynamically
- builds and installs the module for the running kernel using dkms.
+ This package provides the Linux kernel module source which has been
+ prepared for use with DKMS.
 
 Package: ipheth-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ipheth-dkms (= ${source:Version})
-Description: pairing utility for the iPhone tethering Linux kernel driver
- Provides a Linux kernel driver that adds support for iPhone tethering through
- USB cables. Unlike other solutions out there, you don't need to jailbreak your
- phone or install third-party proxy applications.
+Description: USB tethering driver for the iPhone [support utilities]
+ Internet tethering driver for the iPhone which allows Linux systems to
+ make use of the phone's internet connection using a USB cable. Unlike
+ other solutions out there, you don't need to jailbreak your phone or
+ install third-party proxy applications.
  .
- This package provides the pairing utility and udev rules required to use the
- ipheth iPhone tethering Linux kernel driver.
+ This package provides the support utilities required to automatically
+ set up the tethered connection.
