@@ -22,7 +22,6 @@ Description: Linux kernel driver that adds support for iPhone tethering
 Package: ipheth-utils
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ipheth-dkms (= ${source:Version})
-Provides: ipheth
 Description: pairing utility for the iPhone tethering Linux kernel driver
  Provides a Linux kernel driver that adds support for iPhone tethering through
  USB cables. Unlike other solutions out there, you don't need to jailbreak your
