@@ -1,7 +1,6 @@
 ipheth (1.0-2) unstable; urgency=low
 
   * Removed the ipheth-dkms package (Closes: #597157)
-    - Driver included in the mainstream Kernel (>= 2.6.34). 
 
  -- Paul McEnery <pmcenery@gmail.com>  Thu, 23 Sep 2010 15:01:13 +0100
 
