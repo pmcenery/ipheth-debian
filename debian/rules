@@ -2,11 +2,6 @@
 # -*- mode: makefile; coding: utf-8 -*-
 # Copyright © 2010 Paul McEnery <pmcenery@gmail.com>
 
-# Variables
-DEBVERS  := $(shell dpkg-parsechangelog | grep ^Version: | cut -d' ' -f2 \
-		| cut -d- -f1)
-VERSION  := $(shell echo '$(DEBVERS)' | sed -e 's/[+-].*//' -e 's/~//g')
-
 %:
 	dh $@
 
@@ -14,19 +9,3 @@ VERSION  := $(shell echo '$(DEBVERS)' | sed -e 's/[+-].*//' -e 's/~//g')
 override_dh_auto_build:
 	make -C ipheth-pair
 
-# Remove the dh_auto_install step
-override_dh_auto_install:
-	install -d $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
-	install -m 0644 ipheth-driver/ipheth.c \
-	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
-	install -m 0644 ipheth-driver/Makefile \
-	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
-	install -m 0644 ipheth-driver/README \
-	  $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)
-	sed -e 's/#VERSION#/$(VERSION)/' $(CURDIR)/debian/dkms.conf.in \
-          > $(CURDIR)/debian/tmp/usr/src/ipheth-$(VERSION)/dkms.conf
-
-# Symlink ipheth-utils docdir to ipheth-dkms
-override_dh_installdocs:
-	dh_installdocs -pipheth-dkms
-	dh_installdocs -pipheth-utils --link-doc=ipheth-dkms
