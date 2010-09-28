@@ -1,9 +1,11 @@
-ipheth (1.0-2) unstable; urgency=low
+ipheth (1.0-3) unstable; urgency=low
 
   As of 21 April 2010, the ipheth kernel module has been accepted in
-  the mainstream Linux kernel (2.6.34). There is therefore no longer
-  any need to supply the source code for the driver. For this reason,
-  the ipheth-dkms package been removed.
+  the mainstream Linux kernel (2.6.34). The Debian kernel team have 
+  backported the driver which has been available since Debian kernel
+  2.6.32-12. There is therefore no longer any need to supply the source
+  code for the driver. For this reason, the ipheth-dkms package been
+  removed.
 
   If you run a desktop system, it may not be necessary to install
   ipheth-utils. Desktop packages such as GVFS and libgpod automatically
@@ -12,6 +14,6 @@ ipheth (1.0-2) unstable; urgency=low
   use of the iPhone's Internet connection.
 
   Users upgrading from version 1.0-1 are advised to remove the
-  ipheth-dkms package in order to use the Kernel maintained driver.
+  ipheth-dkms package in order to use the kernel maintained driver.
   
- -- Paul McEnery <pmcenery@gmail.com>  Thu, 23 Sep 2010 15:01:13 +0100
+ -- Paul McEnery <pmcenery@gmail.com>  Tue, 28 Sep 2010 23:02:47 +0100

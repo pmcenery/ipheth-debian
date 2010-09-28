@@ -1,3 +1,9 @@
+ipheth (1.0-3) unstable; urgency=low
+
+  * Add statement regarding Debian kernel version in NEWS.Debian
+
+ -- Paul McEnery <pmcenery@gmail.com>  Tue, 28 Sep 2010 23:02:47 +0100
+
 ipheth (1.0-2) unstable; urgency=low
 
   * Removed the ipheth-dkms package (Closes: #597157)
