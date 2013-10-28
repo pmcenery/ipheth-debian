@@ -3,7 +3,7 @@
 # Copyright © 2010 Paul McEnery <pmcenery@gmail.com>
 
 %:
-	dh --with-quilt $@
+	dh $@
 
 # Build ipeth-pair binary only
 override_dh_auto_build:
