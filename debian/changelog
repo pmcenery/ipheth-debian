@@ -1,3 +1,9 @@
+ipheth (1.0-4) unstable; urgency=low
+
+  * Remove references to obsolete ipheth-dkms package (Closes: #711684)
+
+ -- Paul McEnery <pmcenery@gmail.com>  Mon, 28 Oct 2013 08:24:30 +0000
+
 ipheth (1.0-3) unstable; urgency=low
 
   * Add statement regarding Debian kernel version in NEWS.Debian
