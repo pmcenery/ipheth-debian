@@ -1,0 +1,48 @@
+--- a/ipheth-pair/ipheth-pair.c	2013-10-28 11:15:22.013134486 +0000
++++ b/ipheth-pair/ipheth-pair.c	2013-10-28 11:17:12.609134339 +0000
+@@ -1,7 +1,7 @@
+ /*
+  *  Apple iPhone USB Ethernet pairing program
+  *
+- *  Copyright (c) 2009, 2010 Daniel Borca  All rights reserved.
++ *  Copyright (c) 2009, 2010, 2011 Daniel Borca  All rights reserved.
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -31,6 +31,7 @@
+     const char *myself = argv[0];
+     const char *uuid = NULL;
+     int list = 0;
++    int oldc = 0;
+ 
+     idevice_error_t rv;
+     idevice_t device;
+@@ -39,13 +40,17 @@
+     while (--argc > 0) {
+ 	const char *p = *++argv;
+ 	if (!strcmp(p, "--help") || !strcmp(p, "-h")) {
+-	    printf("usage: %s [--list] [--uuid UUID]\n", myself);
++	    printf("usage: %s [--list] [--uuid UUID] [--oldc]\n", myself);
+ 	    return 0;
+ 	}
+ 	if (!strcmp(p, "--list") || !strcmp(p, "-l")) {
+ 	    list = !0;
+ 	    break;
+ 	}
++	if (!strcmp(p, "--oldc") || !strcmp(p, "-o")) {
++	    oldc = !0;
++	    break;
++	}
+ 	if (!strcmp(p, "--uuid") || !strcmp(p, "-u")) {
+ 	    if (argc < 2) {
+ 		fprintf(stderr, "%s: argument to '%s' is missing\n", myself, p);
+@@ -94,7 +99,8 @@
+ 	fprintf(stderr, "%s: %d: cannot get %s device\n", myself, rv, uuid ? uuid : "default");
+ 	return -1;
+     }
+-    rv = lockdownd_client_new(device, &client, "ipheth-pair");
++    rv = oldc ? lockdownd_client_new(device, &client, "ipheth-pair"):
++		lockdownd_client_new_with_handshake(device, &client, "ipheth-pair"); /* TrustedHostAttached */
+     if (rv) {
+ 	fprintf(stderr, "%s: %d: cannot get lockdown\n", myself, rv);
+ 	idevice_free(device);
