@@ -1,5 +1,11 @@
---- a/ipheth-pair/ipheth-pair.c	2013-10-28 11:15:22.013134486 +0000
-+++ b/ipheth-pair/ipheth-pair.c	2013-10-28 11:17:12.609134339 +0000
+From: Daniel Borca <dborca@yahoo.com>
+Description: Fixed pairing for new firmwares.
+ This fix resides in Git, but no new release expected...
+Applied-Upstream: commit 06f5d7d,
+ https://github.com/dgiagio/ipheth/commit/06f5d7d159852e2c3d7aff0d565b6ed4966c9539
+Last-Update: 2011-08-18
+--- a/ipheth-pair/ipheth-pair.c
++++ b/ipheth-pair/ipheth-pair.c
 @@ -1,7 +1,7 @@
  /*
   *  Apple iPhone USB Ethernet pairing program
