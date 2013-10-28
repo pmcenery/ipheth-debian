@@ -3,7 +3,7 @@ Section: net
 Priority: extra
 Maintainer: Paul McEnery <pmcenery@gmail.com>
 Build-Depends: debhelper (>= 7.4.2~), libimobiledevice-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.3
 Vcs-Git: http://github.com/pmcenery/ipheth-debian.git
 Vcs-Browser: http://github.com/pmcenery/ipheth-debian
 Homepage: http://giagio.com/wiki/moin.cgi/iPhoneEthernetDriver
