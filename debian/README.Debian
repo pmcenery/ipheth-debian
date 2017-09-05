@@ -5,8 +5,21 @@ The Debian version of ipheth provides the following binary package:
 
 ipheth-utils - pairing utility for the iPhone tethering Linux kernel driver
 
+iDevice USB tethering requires the device to be paired with the system
+that it is connected to. There are a number of ways that the device can
+be paired. If your desktop environment supports Apple File Conduit (AFC),
+and allows you to browse the contents of the device via the afc:// location;
+then you probably don't need this package. If however your system doesn't
+have a graphical environment, or doesn't have any other elements that support
+AFC; then this package will be useful for carrying out the initial pairing.
 
-The ipheth-utils package provides the pairing utility and associated udev
-rules for the ipheth Linux kernel driver.
+In order for the initial pairing to be successful, the security passcode
+on the device might need to be disabled. Once pairing is complete (see
+dmesg output), the passcode can be re-enabled.
 
- -- Paul McEnery <pmcenery@gmail.com>  Mon, 28 Oct 2013 08:24:30 +0000
+Once paired and connected via USB, the driver which is included in the
+mainline kernel since April 2010 (2.6.34) will present a network device
+to the operarating system for configuration. The network device should
+be visible, and can be configured via ifconfig(8) or similar utilities.
+
+ -- Paul McEnery <pmcenery@gmail.com>  Tue, 05 Sep 2017 13:36:17 +0100
