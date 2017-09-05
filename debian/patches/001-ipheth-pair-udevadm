@@ -1,0 +1,13 @@
+Index: ipheth-debian/ipheth-pair/Makefile
+===================================================================
+--- ipheth-debian.orig/ipheth-pair/Makefile
++++ ipheth-debian/ipheth-pair/Makefile
+@@ -8,7 +8,7 @@ ipheth-pair: ipheth-pair.o
+ install:
+ 	install -m 0755 ipheth-pair /lib/udev/
+ 	install -m 0644 90-iphone-tether.rules /etc/udev/rules.d
+-	/sbin/udevadm control --reload-rules
++	udevadm control --reload-rules
+ 
+ clean:
+ 	rm -f *.o ipheth-pair
