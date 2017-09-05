@@ -1,2 +1,2 @@
 version=3
-http://githubredir.debian.net/github/dgiagio/ipheth /([\d\.].*).tar.gz
+https://github.com/dgiagio/ipheth/tags .*/(.*)\.tar\.gz
