@@ -6,7 +6,7 @@ Source: http://github.com/dgiagio/ipheth/downloads
 Files: *
 Copyright: 2009, Diego Giagio <diego@giagio.com>
            2009, Daniel Borca <dborca@yahoo.com>
-License: GPL-2, GPL-2+
+License: GPL-2 or GPL-2+
 
 Files: ipheth-driver/ipheth.c
 Copyright: 2009, Diego Giagio <diego@giagio.com>
