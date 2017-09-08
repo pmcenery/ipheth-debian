@@ -1,2 +1,5 @@
 version=3
-https://github.com/dgiagio/ipheth/tags .*/(.*)\.tar\.gz
+opts=\
+filenamemangle=s/.+\/?(\d\S+)\.tar\.gz/$1\.tar\.gz/,\
+pgpsigurlmangle=s/archive\/(\d\S+)\.tar\.gz/releases\/download\/$1\/$1\.tar\.gz\.asc/ \
+ https://github.com/dgiagio/ipheth/tags .*/(.*)\.tar\.gz
