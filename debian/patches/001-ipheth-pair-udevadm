@@ -1,5 +1,8 @@
-Index: ipheth-debian/ipheth-pair/Makefile
-===================================================================
+From: Paul McEnery <pmcenery@gmail.com>
+Description: Remove hard coded path to udevadm executable.
+ The udevadm executable has moved. Rely on the path now to
+ find the correct location of udevadm.
+Last-Update: 2017-09-08
 --- ipheth-debian.orig/ipheth-pair/Makefile
 +++ ipheth-debian/ipheth-pair/Makefile
 @@ -8,7 +8,7 @@ ipheth-pair: ipheth-pair.o
