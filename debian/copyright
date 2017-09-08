@@ -3,6 +3,11 @@ Upstream-Name: ipheth
 Upstream-Contact: Diego Giagio <diego@giagio.com>
 Source: http://github.com/dgiagio/ipheth/downloads
 
+Files: *
+Copyright: 2009, Diego Giagio <diego@giagio.com>
+           2009, Daniel Borca <dborca@yahoo.com>
+License: GPL-2, GPL-2+
+
 Files: ipheth-driver/ipheth.c
 Copyright: 2009, Diego Giagio <diego@giagio.com>
 License: GPL-2
