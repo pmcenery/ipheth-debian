@@ -1,2 +1,2 @@
-version=3
+version=4
 https://github.com/dgiagio/ipheth/tags .*/(.*)\.tar\.gz

@@ -1,3 +1,14 @@
+ipheth (1.0-6) UNRELEASED; urgency=medium
+
+  * Trim trailing whitespace.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Change priority extra to priority optional.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Update watch file format version to 4.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Tue, 28 Apr 2020 18:25:57 +0000
+
 ipheth (1.0-5) unstable; urgency=low
 
   * Remove references to obsolete ipeth-dkms package (Closes: #711684, #872322)
