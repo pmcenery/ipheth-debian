@@ -8,4 +8,3 @@
 # Build ipeth-pair binary only
 override_dh_auto_build:
 	make -C ipheth-pair
-
