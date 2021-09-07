@@ -1,6 +1,6 @@
 Source: ipheth
 Section: net
-Priority: extra
+Priority: optional
 Maintainer: Paul McEnery <pmcenery@gmail.com>
 Build-Depends: debhelper-compat (= 13), libimobiledevice-dev
 Standards-Version: 4.0.0
